@@ -1,0 +1,106 @@
+.chat-container {
+  padding: 2rem 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0c3fc 100%);
+}
+
+.chat-box {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  border: 1.5px solid #e0c3fc;
+  overflow: hidden;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1.5rem 1rem 1rem 1rem;
+  background: linear-gradient(120deg, #f8fafc 60%, #e0c3fc 100%);
+}
+
+.message {
+  max-width: 70%;
+  margin-bottom: 1.2rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 18px;
+  word-wrap: break-word;
+  font-size: 1.08rem;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.user-message {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  color: #fff;
+  margin-left: auto;
+  box-shadow: 0 2px 8px rgba(67, 233, 123, 0.15);
+  border-bottom-right-radius: 4px;
+}
+
+.bot-message {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  margin-right: auto;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.15);
+  border-bottom-left-radius: 4px;
+}
+
+/* Avatars */
+.message::before {
+  content: '';
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  margin-right: 0.7rem;
+  background-size: cover;
+  background-position: center;
+}
+.user-message::before {
+  background: url('https://api.dicebear.com/7.x/personas/svg?seed=User') no-repeat center/cover, #43e97b;
+  margin-left: 0.7rem;
+  margin-right: 0;
+  order: 2;
+}
+.bot-message::before {
+  background: url('https://api.dicebear.com/7.x/bottts/svg?seed=Bot') no-repeat center/cover, #667eea;
+}
+
+.message-form {
+  padding: 1rem;
+  border-top: 1px solid #e0c3fc;
+  background: rgba(255,255,255,0.95);
+}
+
+.message-input {
+  margin-right: 0.5rem;
+  border-radius: 12px;
+  border: 1.5px solid #e0c3fc;
+  box-shadow: 0 1px 4px rgba(224, 195, 252, 0.08);
+  font-size: 1.08rem;
+  padding: 0.7rem 1rem;
+}
+
+.send-button {
+  min-width: 90px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(67, 233, 123, 0.12);
+  transition: background 0.2s;
+}
+.send-button:hover {
+  background: linear-gradient(135deg, #38f9d7 0%, #43e97b 100%);
+}
